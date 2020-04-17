@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.5" type="plugin" group="vmpayment" >
+    <name>VM - Payment, CMS</name>
+    <creationDate>April 2012</creationDate>
+    <author>CMS India</author>
+    <copyright>Copyright (C) 2017 CMS Team. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>1.0.0</version>
+     <description><![CDATA[<a href="#" target="_blank">CMS</a> is a popular
+	payment provider. ]]>
+    </description>
+    <files>
+	<filename plugin="cms_joomla">cms_joomla.php</filename>
+        
+	</files>
+	
+	<media folder="images" destination="../images/stories/virtuemart/payment">
+	<filename>cms_joomla.jpg</filename>
+    </media>
+    <languages>
+	<language tag="en-GB">en-GB.plg_vmpayment_cms_joomla.ini</language>
+    </languages>    
+    <vmconfig>
+        <fields name="params">	
+            <fieldset name="basic">
+
+                <field type="text" name="toid"  size="50" label="Merchant Id"/>
+                <field type="text" name="partenerid"  size="50" label="Partner Id"/>
+                <field type="text" name="ipaddr"  size="50" label="IP Adress"/>
+                <field type="text" name="workingkey"  size="50" label="Working Key"/>
+                <field type="text" name="totype"  size="50" label="Partner Name"/>
+                <field type="text" name="testurl"  size="50" label="Test Url"/>
+                <field type="text" name="liveurl"  size="50" label="Live Url"/>
+                <field name="mode" type="list" default="TEST" label="Mode">
+                    <option value="LIVE" >LIVE</option>
+                    <option value="TEST">TEST</option>
+                </field>
+                <field type="textarea" name="description" cols="10" rows="4"  label="Description"/>
+
+               <field name="no_shipping" type="list" default="0" label="VMPAYMENT_CMS_JOOMLA_NO_SHIPPING" description="VMPAYMENT_CMS_JOOMLA_NO_SHIPPING_DESC" >
+                    <option value="0">VMPAYMENT_CMS_JOOMLA_NO_SHIPPING_PROMPT</option>
+                    <option value="1">VMPAYMENT_CMS_JOOMLA_NO_SHIPPING_DO_NOT_PROMPT</option>
+                    <option value="2">VMPAYMENT_CMS_JOOMLA_NO_SHIPPING_PROMPT_REQUIRE</option>
+                </field>
+
+                <field name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="VMPAYMENT_CMS_JOOMLA_COUNTRIES" description="VMPAYMENT_CMS_JOOMLA_COUNTRIES_DESC"/>
+
+                <field name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_CMS_JOOMLA_STATUS_PENDING" description="VMPAYMENT_CMS_JOOMLA_STATUS_PENDING_EXPLAIN" />
+                <field name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_CMS_JOOMLA_STATUS_SUCCESS" description="VMPAYMENT_CMS_JOOMLA_STATUS_SUCCESS_EXPLAIN" />
+                <field name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_CMS_JOOMLA_STATUS_CANCELED" description="VMPAYMENT_CMS_JOOMLA_STATUS_CANCELED_EXPLAIN" />
+				<field name="status_failed" type="vmorderstate" scope="com_virtuemart" default="L" label="VMPAYMENT_CMS_JOOMLA_STATUS_FAILED" description="VMPAYMENT_CMS_JOOMLA_STATUS_FAILED_EXPLAIN" />
+            </fieldset>
+        </fields>
+    </vmconfig>
+
+</extension>
